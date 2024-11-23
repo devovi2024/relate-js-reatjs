@@ -1,0 +1,242 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
+    border-radius: 10px;
+    animation: slideIn 1s ease-out;
+}
+
+.todo-image {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    animation: rotateImage 2s infinite;
+}
+
+.todo-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Task Section */
+.task-section {
+    margin-top: 20px;
+}
+
+.task-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    background-color: #2e2e2e;
+    color: white;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.task-input:focus {
+    border: 2px solid #2196F3;
+}
+
+.task-button {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Task List */
+.task-list {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e2e2e;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    animation: fadeIn 0.5s ease;
+    transition: background-color 0.3s ease;
+}
+
+.task-list li:hover {
+    background-color: #3e3e3e;
+}
+
+.task-text {
+    flex-grow: 1;
+    font-size: 16px;
+    color: #fff;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: #a5a5a5;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-actions button {
+    background-color: #ff8c00;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-actions button:hover {
+    background-color: #ff7a00;
+    transform: scale(1.1);
+}
+
+.task-actions .delete {
+    background-color: #ff4c4c;
+}
+
+.task-actions .delete:hover {
+    background-color: #ff2f2f;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes rotateImage {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #000;
+}
+
+.todo-app.dark-mode {
+    background-color: #1a1a1a;
+}
+
+
+
+
+
+
+/* Basic button styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Edit button (Orange color) */
+button.edit {
+    background-color: #ff9800;
+}
+
+/* Delete button (Red color) */
+button.delete {
+    background-color: #f44336;
+}
+
+/* Hover effect */
+button:hover {
+    opacity: 0.8; 
+    transform: scale(1.1); /* Slightly increase the size of the button */
+}
+
+/* Focus effect (when clicked or focused) */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.5); /* Blue glow effect when focused */
+}
+
+/* Active effect (when button is pressed) */
+button:active {
+    transform: scale(0.95); 
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
